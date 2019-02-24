@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class = "article">
-<img class="newsdetailimage" src="{{articles.imageurl}}">
+    <img class="newsdetailimage" src="{{articles.imageurl}}" style="margin-top: 8px;">
     <div class="newsdetail">
         {% if articles.postdate %}
             <div class="date">
@@ -15,49 +15,38 @@
     </div>
 </div>
 
-<style>
-   .bias {
-     background-color: {{articles.biascolor}};
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 30%;
-}
-</style>
 
 <div class = "comments">
-    <div class ="bias">
-        <b>{{articles.biastext}}</b>
-    </div>
+
+
     <div class = "header">
-        Summary Sources
+        <b style="font-size: 30px;">
+          Summary Sources
+        </b>
     </div>
-    <div class ="articlelinks"
+    <div class ="articlelinks">
       {{articles.articleurl|safe}}
 
-</div>
-</div>
-<!--<div class = "comments">
-<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=articles.pk %}">Add comment</a>
-{% for comment in articles.comments.all %}
-    {% if user.is_authenticated or comment.approved_comment %}
-    <div class="comment">
-        <div class="date">
-            {{ comment.created_date }}
-            {% if not comment.approved_comment %}
-                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
-            {% endif %}
-        </div>
-        <strong>{{ comment.author }}</strong>
-        <p>{{ comment.text|linebreaks }}</p>
     </div>
 
+
+
+
+
+    {% if articles.biastext == "Liberal Leaning" %}
+      <div class ="bias left-bias">
+          <b data-toggle="tooltip" data-placement="top" title="Most of these articles are liberal leaning." style="text-align: center">{{articles.biastext}}</b>
+      </div>
+    {% elif articles.biastext == "Conservative Leaning" %}
+      <div class ="bias right-bias">
+          <b data-toggle="tooltip" data-placement="left" title="Most of these articles are conservative leaning." style="text-align: center">{{articles.biastext}}</b>
+      </div>
+    {% else %}
+      <div class ="bias neutral-bias">
+          <b data-toggle="tooltip" data-placement="left" title="On average, these articles are not strongly biased." style="text-align: center">Neutral Partisan Bias</b>
+      </div>
     {% endif %}
-{% empty %}
-    <p>No comments here yet :(</p>
-{% endfor %}
+
 </div>
+
 {% endblock %}
--->

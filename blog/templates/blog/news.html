@@ -1,73 +1,59 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="row">
 
-<div class="articletotal">
-<div class="articlemenu">
-    {% for article in articles %}
+  <div  class="articletotal col-4" style="height: 100%;margin-right: -50px;padding-right: 50px;overflow-y: scroll;">
+    <table class="articlemenu table">
+      <tbody>
+        <tr style="color: blue"></tr>
+          {% for article in articles %}
+            <tr>
+              <td class="post">
+                <a href="{% url 'news_detail' pk=article.pk %}" target="myiframe">
+                  <!-- <a href="{% url 'news_detail' pk=article.pk %}"> -->
+                      <div class="date">
+                        Published {{ article.postdate }}
+                      </div>
+                      <div class="half">
+                        <h5>{{ article.title }}</h5>
+                        Comments: {{ article.comments.count }}
+                        <!--<h1><a href="{ url 'news' pk=articleupload.pk }">{{ articleupload.title }}</a></h1> -->
+                        <!-- <p>{{ article.text|linebreaksbr }}</p> -->
+                      </div>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <br><br><br><br>
+  </div>
 
-<style>
-   .X{{ article.id }} {
-    ##background-image: url("{{ article.imageurl }}");
-     #background-repeat: no-repeat;
-    #background-size: 100%;
-    display: inline-block;
-    width: 99%;
-    padding-left: 1%;
-    vertical-align: top;
-    margin-bottom: 0px;
-    opacity: 0.8;
 
-}
+  <div class="articlecontent col-8" style="background-color: lightGrey;overflow: hidden">
+    <iframe name="myiframe" id="myiframe"></iframe>
+  </div>
 
-.X{{ article.id }}:hover, half:hover {
-opacity: 1;
-  filter: blur(0px)
-}
-</style>
 
-    <a href="{% url 'news_detail' pk=article.pk %}" target="myiframe">
-<!-- <a href="{% url 'news_detail' pk=article.pk %}"> -->
-      <div class="X{{article.id}}">
-        <div class="post">
-            <div class="date">
-                <p>published: {{ article.postdate }}</p>
-            </div>
-            <div class="half">
-            <h4>{{ article.title }}</h4>
-                Comments: {{ article.comments.count }}
-            <!--<h1><a href="{ url 'news' pk=articleupload.pk }">{{ articleupload.title }}</a></h1> -->
-           <!-- <p>{{ article.text|linebreaksbr }}</p> -->
-            </div>
-        </div>
-      </div>
-</a>
-    {% endfor %}
+  <!--
+  <div class="pagination">
+      <span class="step-links">
+          {% if articles.has_previous %}
+              <a class = "paginationlink" href="?page=1">&laquo; first</a>
+              <a class = "paginationlink" href="?page={{ articles.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+              Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+          </span>
+
+          {% if articles.has_next %}
+              <a class = "paginationlink" href="?page={{ articles.next_page_number }}">next</a>
+              <a class = "paginationlink" href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>-->
+
 </div>
-    </div>
-<div class = "sepblock">
-</div>
-<div class = "articlecontent">
-<iframe name="myiframe" ></iframe>
-</div>
-</div>
-
-<div class="pagination">
-    <span class="step-links">
-        {% if articles.has_previous %}
-            <a class = "paginationlink" href="?page=1">&laquo; first</a>
-            <a class = "paginationlink" href="?page={{ articles.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
-        </span>
-
-        {% if articles.has_next %}
-            <a class = "paginationlink" href="?page={{ articles.next_page_number }}">next</a>
-            <a class = "paginationlink" href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
-</div>
-
 {% endblock %}
