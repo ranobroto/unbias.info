@@ -26,7 +26,10 @@ class Articleupload(models.Model):
     articleurl = models.TextField(default = "www.google.com")
     subreddit = models.CharField(max_length=50)
     votes = models.ManyToManyField('auth.User', related_name ='likes', blank=True)
-
+    annotations_total = models.IntegerField()
+    pscore = models.FloatField()
+    biastext = models.TextField()
+    biascolor = models.TextField()
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.Articleupload', on_delete=models.CASCADE, related_name='comments')
