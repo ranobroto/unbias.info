@@ -17,7 +17,6 @@
                       </div>
                       <div class="half">
                         <h5>{{ article.title }}</h5>
-                        Comments: {{ article.comments.count }}
                         <!--<h1><a href="{ url 'news' pk=articleupload.pk }">{{ articleupload.title }}</a></h1> -->
                         <!-- <p>{{ article.text|linebreaksbr }}</p> -->
                       </div>
@@ -36,7 +35,7 @@
   </div>
 
 
-  <!--
+
   <div class="pagination">
       <span class="step-links">
           {% if articles.has_previous %}
@@ -53,7 +52,7 @@
               <a class = "paginationlink" href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
           {% endif %}
       </span>
-  </div>-->
+  </div>
 
 </div>
 {% endblock %}

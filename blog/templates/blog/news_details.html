@@ -9,14 +9,30 @@
                 {{articles.postdate }}
             </div>
         {% endif %}
-
-        <h2><a class="detailslink" href="#">{{ articles.title }}</a></h2>
-        <ul>{{ articles.text|safe }}</ul>
+        <div style="overflow-y: scroll; height: 45%;">
+          <h2><a class="detailslink" href="#">{{ articles.title }}</a></h2>
+          <ul>{{ articles.text|safe }}</ul>
+        </div>
     </div>
 </div>
 
 
 <div class = "comments">
+
+
+  {% if articles.biastext == "Liberal Leaning" %}
+    <div class ="bias left-bias" style="text-align: center; display: block; width: 100%; margin: auto;">
+        <b data-toggle="tooltip" data-placement="top" title="Most of these articles are liberal leaning." style="text-align: center">&nbsp;Liberal Leaning</b>
+    </div>
+  {% elif articles.biastext == "Conservative Leaning" %}
+    <div class ="bias right-bias" style="text-align: center; display: block; width: 100%; margin: auto;">
+        <b data-toggle="tooltip" data-placement="left" title="Most of these articles are conservative leaning." style="text-align: center">&nbsp; Conservative Leaning</b>
+    </div>
+  {% else %}
+    <div class ="bias neutral-bias" style="text-align: center; display: block; width: 100%; margin: auto;">
+        <b data-toggle="tooltip" data-placement="left" title="On average, these articles are not strongly biased." style="text-align: center">Neutral Partisan Bias</b>
+    </div>
+  {% endif %}
 
 
     <div class = "header">
@@ -33,19 +49,7 @@
 
 
 
-    {% if articles.biastext == "Liberal Leaning" %}
-      <div class ="bias left-bias">
-          <b data-toggle="tooltip" data-placement="top" title="Most of these articles are liberal leaning." style="text-align: center">{{articles.biastext}}</b>
-      </div>
-    {% elif articles.biastext == "Conservative Leaning" %}
-      <div class ="bias right-bias">
-          <b data-toggle="tooltip" data-placement="left" title="Most of these articles are conservative leaning." style="text-align: center">{{articles.biastext}}</b>
-      </div>
-    {% else %}
-      <div class ="bias neutral-bias">
-          <b data-toggle="tooltip" data-placement="left" title="On average, these articles are not strongly biased." style="text-align: center">Neutral Partisan Bias</b>
-      </div>
-    {% endif %}
+
 
 </div>
 
