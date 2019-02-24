@@ -132,7 +132,7 @@ display: inline;
 }
 
 a:hover {
-color: white;
+color: grey;
 text-decoration:none;
 
 }
@@ -196,7 +196,6 @@ top: 0;
 right: 0;
 overflow: visible;
 vertical-align: top;
-padding-top:80px;
 }
 
 .newsdetail {
@@ -273,4 +272,21 @@ left:39.5%;
 background-color:black;
 position: fixed;
 float: left;
+}
+
+.bias{
+display: flex;
+align-items: center;
+vertical-align: middle;
+ color: white;
+  font-size: 50px;
+}
+.articlelinks {
+padding: 10%
+}
+
+.header {
+font-size: 30px;
+text-align: center;
+margin: 5% 0 0 0;
 }
