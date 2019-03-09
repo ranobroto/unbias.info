@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib import admin
+from django.conf.urls import url
 
 urlpatterns = [
     path('', views.news, name='home'),
@@ -20,4 +21,6 @@ urlpatterns = [
     path('comment/<pk>/remove/', views.comment_remove, name='comment_remove'),
     #path('vote/<pk>/vote_up/', views.vote_up, name='vote_up'),
     # path('admin/', admin.site.urls),
+    #url(r'^search-form/$', views.search_form),
+    url(r'^search/$', views.search),
 ]

@@ -1,0 +1,67 @@
+{% extends 'blog/base2.html' %}
+
+{% block content %}
+<!--style = "background: url({{articles.imageurl}}); background-repeat: no-repeat; background-size: cover;  background-position: center; "-->
+<div class = "backgroundblur" style = "background: url({{articles.imageurl}}) no-repeat center center fixed; background-size: cover;  background-position: center; "></div>
+<div class = "flexarticle">
+<div class = "article">
+<img class="newsdetailimage" src="{{articles.imageurl}}">
+    <div class="newsdetail">
+        {% if articles.postdate %}
+            <div class="date">
+                {{articles.postdate }}
+            </div>
+        {% endif %}
+
+        <h2><a class="detailslink" href="#">{{ articles.title }}</a></h2>
+        <div class="newstext">
+        <ul>{{ articles.text|safe }}</ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<style>
+   .bias {
+     background-color: {{articles.biascolor}};
+
+    text-align: center;
+    width: 100%;
+}
+</style>
+
+<div class = "sources">
+    <div class ="bias">
+        <b>{{articles.biastext}}</b>
+    </div>
+    <div class = "header">
+        Summary Sources
+    </div>
+    <div class ="articlelinks">
+      {{articles.articleurl|safe}}
+
+    </div>
+</div>
+
+<div class = "comments">
+<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=articles.pk %}">Add comment</a>
+{% for comment in articles.comments.all %}
+    {% if user.is_authenticated or comment.approved_comment %}
+    <div class="comment">
+        <div class="date">
+            {{ comment.created_date }}
+            {% if not comment.approved_comment %}
+                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+            {% endif %}
+        </div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+
+    {% endif %}
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,342 @@
+h1 a, h2 a {
+    color: #C25100;
+    font-family: 'arial';
+}
+
+.page-header {
+    background-color: black;
+    margin-top: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: none;
+    margin: 0px 0 0 0;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #000000;
+    font-size: 36pt;
+    text-decoration: none;
+    padding: 0px 0px 0px 0px;
+    display:inline;
+}
+
+.content {
+    margin-left: 0px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Arial', cursive;
+    margin-top:0px
+}
+
+.h1header{
+margin-bottom:0px
+}
+
+.date {
+    color: darkgreen;
+    margin-left: 2%;
+    width:30%;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 5px;
+    background: white;
+}
+
+.post h3 a, .post h1 a:visited {
+    color: black;
+}
+
+.half  {
+#background-color: rgba(0, 0, 0, 0);
+color: black;
+width: 98%;
+margin-left: 2%
+}
+
+
+
+.col-md-8 {
+display: inline-block;
+width: 90%;
+margin: 0 0 0 10%;
+padding: 0;
+}
+
+.container {
+width:100%;
+}
+
+body {
+background-color:white;
+}
+
+h1 {
+Font-size: 1.65vw;
+
+}
+
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    display: inline;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.menubar {
+display: block;
+width: 10%;
+height:100%;
+list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    position: fixed;
+    background-color: black;
+    color:white;
+}
+
+
+.listmenu {
+
+    color: white;
+    padding: 10% 20px 10% 0px;
+    font-size: 15pt;
+}
+
+.listmenumain {
+display: inline;
+    color: white;
+    font-size: 36pt;
+    text-decoration: none;
+    padding: 10px 40px 0px 10px;
+}
+
+a:hover {
+color: grey;
+text-decoration:none;
+
+}
+
+a {
+color: white;
+}
+
+.listmenu-right {
+
+  display: inline;
+   float: right;
+  color: 000;
+  padding: 0 20px 0px 0px;
+  font-size: 15pt;
+}
+
+
+
+.detailslink {
+color: #000;
+}
+.detailslink:hover {
+color: #000;
+background-color: #fff;
+}
+
+.paginationlink {
+color: white;
+}
+.current {
+color: white;
+}
+.pagination {
+margin-left: auto;
+margin-right: auto;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+    background-color: white;
+
+}
+
+.article {
+display: flex;
+flex-direction: column;
+width:70%;
+height: 100%;
+margin-top:8px;
+position: fixed;
+top: 0;
+left: 0;
+overflow-y: auto;
+}
+
+.comments {
+width: 30%;
+height: 100%;
+display: block;
+background-color: #ecf0f1;
+position: fixed;
+top: 0;
+right: 0;
+overflow: visible;
+vertical-align: top;
+}
+
+.newsdetail {
+#background-color:white;
+background-color: rgba(255,255,255,0.3);
+height: auto;
+width: 100%;
+flex:1;
+
+    margin-left: auto%;
+    margin-right: auto;
+    vertical-align: middle;
+    font-size: 18px;
+    padding: 2% 3% 6% 3%;
+    margin-bottom: 15%;
+    overflow-y: auto;
+
+}
+
+.newsdetailimage {
+max-height: 40%;
+flex:4;
+width: auto;
+display block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 7px;
+    filter: blur(0px) !important;
+    -webkit-filter: blur(0px) !important;
+}
+
+.backgroundblur{
+    height: 100%;
+    width: 100%;
+    margin-left: -20%;
+    margin-top: -2%;
+    filter: blur(15px) brightness(30%);
+    -webkit-filter: blur(15px) brightness(30%);
+     #background-color: black;
+    }
+.darken-overlay{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+
+.articlemenu {
+width: 100S%;
+position: relative;
+float: left;
+}
+.articlecontent {
+width: 60%;
+left: 40%;
+height: 100%;
+position: fixed;
+float: left;
+background: white;
+vertical-align: text-top;
+}
+.articletotal {
+width: 33%;
+background: white;
+vertical-align: top;
+}
+
+.container{
+padding-left: 0;
+padding-right: 0;
+}
+.row{
+margin-right:0px;
+margin-left:0px;
+}
+
+.articlecontent iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   border:none;
+}
+.post:hover {
+
+}
+
+.sepblock {
+height: 100%;
+width:.5%;
+left:39.5%;
+background-color:black;
+position: fixed;
+float: left;
+}
+
+.bias{
+margin: auto;
+text-align: center;
+ color: white;
+  font-size: 40px;
+}
+
+.articlelinks {
+padding: 10%
+}
+
+.header {
+font-size: 30px;
+text-align: center;
+margin: 5% 0 0 0;
+}
+
+.articlelinks a{
+color: black;}
+
+.newsdetail .date{
+margin-left:0;}
+
+.newstext{
+background-color: rgba(255,255,255,0.2);
+padding: 1%;
+color: black;
+}
