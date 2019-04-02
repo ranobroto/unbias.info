@@ -8,6 +8,7 @@ from .forms import PostForm, CommentForm
 from tablib import Dataset
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -77,12 +78,12 @@ def news_detail(request, pk):
 
 
 def world_news(request):
-    articles = Articleupload.objects.filter(subreddit='Worldnews').order_by('-postdate')[:15]
+    articles = Articleupload.objects.filter(subreddit='worldnews').order_by('-postdate')[:15]
     return render(request, 'blog/news.html', {'articles': articles})
 
 
 def us_news(request):
-    articles = Articleupload.objects.filter(subreddit='News').order_by('-postdate')[:15]
+    articles = Articleupload.objects.filter(subreddit='news').order_by('-postdate')[:15]
     return render(request, 'blog/news.html', {'articles': articles})
 
 
@@ -125,3 +126,15 @@ def comment_remove(request, pk):
 #    articles.votes += 1
 #    articles.votes.save()
 #    return redirect('news')
+
+#def search_form(request):
+#    return render(request, 'blog/search_form.html')
+
+def search(request):
+    if 'q' in request.GET and request.GET['q']:
+        q = request.GET['q']
+        articles = Articleupload.objects.filter(title__icontains=q).order_by('-postdate')[:15]
+        return render(request, 'blog/search_results.html',
+                      {'articles': articles, 'query': q})
+    else:
+        return HttpResponse('Please submit a search term.')

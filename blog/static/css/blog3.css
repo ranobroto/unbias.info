@@ -1,18 +1,16 @@
-body {
-  padding-top: 10px;
-  height: overflow-y: scroll;
-}
 h1 a, h2 a {
     color: #C25100;
     font-family: 'arial';
 }
 
 .page-header {
-    background-color: #FFFFFF;
+    background-color: black;
     margin-top: 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    border: none;
+    margin: 0px 0 0 0;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -20,6 +18,7 @@ h1 a, h2 a {
     font-size: 36pt;
     text-decoration: none;
     padding: 0px 0px 0px 0px;
+    display:inline;
 }
 
 .content {
@@ -36,7 +35,9 @@ margin-bottom:0px
 }
 
 .date {
-    color: darkGreen;
+    color: darkgreen;
+    margin-left: 2%;
+    width:30%;
 }
 
 .save {
@@ -66,14 +67,17 @@ margin-bottom:0px
 .half  {
 #background-color: rgba(0, 0, 0, 0);
 color: black;
-width: 96%;
-margin-left: 3%
+width: 98%;
+margin-left: 2%
 }
 
 
 
 .col-md-8 {
-width: 100%;
+display: inline-block;
+width: 90%;
+margin: 0 0 0 10%;
+padding: 0;
 }
 
 .container {
@@ -113,21 +117,28 @@ Font-size: 1.65vw;
 }
 
 .menubar {
+display: block;
+width: 10%;
+height:100%;
 list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 15px;
+    position: fixed;
+    background-color: black;
+    color:white;
 }
 
+
 .listmenu {
-    display: inline;
-    color: 000;
-    padding: 0 20px 0px 0px;
+
+    color: white;
+    padding: 10% 20px 10% 0px;
     font-size: 15pt;
 }
 
 .listmenumain {
 display: inline;
-    color: #000000;
+    color: white;
     font-size: 36pt;
     text-decoration: none;
     padding: 10px 40px 0px 10px;
@@ -140,7 +151,7 @@ text-decoration:none;
 }
 
 a {
-color: black;
+color: white;
 }
 
 .listmenu-right {
@@ -151,6 +162,8 @@ color: black;
   padding: 0 20px 0px 0px;
   font-size: 15pt;
 }
+
+
 
 .detailslink {
 color: #000;
@@ -176,19 +189,17 @@ margin-right: auto;
     background-color: white;
 
 }
-.newsdetailimage {
-  border-radius: 7px;
-}
 
 .article {
 display: flex;
 flex-direction: column;
 width:70%;
 height: 100%;
-background-color: white;
+margin-top:8px;
 position: fixed;
 top: 0;
 left: 0;
+overflow-y: auto;
 }
 
 .comments {
@@ -204,7 +215,8 @@ vertical-align: top;
 }
 
 .newsdetail {
-background-color:white;
+#background-color:white;
+background-color: rgba(255,255,255,0.3);
 height: auto;
 width: 100%;
 flex:1;
@@ -214,6 +226,8 @@ flex:1;
     vertical-align: middle;
     font-size: 18px;
     padding: 2% 3% 6% 3%;
+    margin-bottom: 15%;
+    overflow-y: auto;
 
 }
 
@@ -226,15 +240,34 @@ display block;
     margin-right: auto;
     vertical-align: middle;
     background-color: white;
+    border-radius: 7px;
+    filter: blur(0px) !important;
+    -webkit-filter: blur(0px) !important;
 }
 
+.backgroundblur{
+    height: 100%;
+    width: 100%;
+    margin-left: -20%;
+    margin-top: -2%;
+    filter: blur(15px) brightness(30%);
+    -webkit-filter: blur(15px) brightness(30%);
+     #background-color: black;
+    }
+.darken-overlay{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+
 .articlemenu {
-width: 99%;
+width: 100S%;
 position: relative;
 float: left;
 }
 .articlecontent {
-width: 59%;
+width: 60%;
 left: 40%;
 height: 100%;
 position: fixed;
@@ -243,7 +276,7 @@ background: white;
 vertical-align: text-top;
 }
 .articletotal {
-width: 40%;
+width: 33%;
 background: white;
 vertical-align: top;
 }
@@ -267,42 +300,25 @@ margin-left:0px;
    border:none;
 }
 .post:hover {
-background-color: rgba(0, 0, 0, 0.1);
+
 }
 
 .sepblock {
 height: 100%;
 width:.5%;
 left:39.5%;
-background-color:white;
+background-color:black;
 position: fixed;
 float: left;
 }
 
 .bias{
-display: flex;
-align-items: center;
-vertical-align: middle;
+margin: auto;
+text-align: center;
  color: white;
-  font-size: 30px;
-  text-align: center;
-}
-.bias b {
-  text-align: center;
+  font-size: 40px;
 }
 
-.left-bias{
-  background-color: #073e96;
-  text-align: center;
-}
-.right-bias{
-  background-color: #c92a1c;
-  text-align: center;
-}
-.neutral-bias{
-  background-color: #338741;
-  text-align: center;
-}
 .articlelinks {
 padding: 10%
 }
@@ -311,4 +327,16 @@ padding: 10%
 font-size: 30px;
 text-align: center;
 margin: 5% 0 0 0;
+}
+
+.articlelinks a{
+color: black;}
+
+.newsdetail .date{
+margin-left:0;}
+
+.newstext{
+background-color: rgba(255,255,255,0.2);
+padding: 1%;
+color: black;
 }
