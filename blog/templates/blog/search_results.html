@@ -1,0 +1,81 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="articletotal">
+    <p>You searched for: <strong>{{ query }}</strong></p>
+<div class="articlemenu">
+
+  {% if articles %}
+    {% for article in articles %}
+
+<style>
+   .X{{ article.id }} {
+    ##background-image: url("{{ article.imageurl }}");
+     #background-repeat: no-repeat;
+    #background-size: 100%;
+    display: inline-block;
+    width: 100%;
+    padding-left: %;
+    vertical-align: top;
+    margin-bottom: 0px;
+    opacity: 0.8;
+    border-top: 1px solid #dee2e6;
+    padding: 8px;
+}
+
+.X{{ article.id }}:hover {
+
+  background-color: #f9f9f9;
+}
+</style>
+
+    <a href="{% url 'news_detail' pk=article.pk %}" target="myiframe">
+<!-- <a href="{% url 'news_detail' pk=article.pk %}"> -->
+      <div class="X{{article.id}}">
+        <div class="post">
+            <div class="date">
+                <p>published: {{ article.postdate }}</p>
+            </div>
+            <div class="half">
+            <h4>{{ article.title }}</h4>
+                Comments: {{ article.comments.count }}
+            <!--<h1><a href="{ url 'news' pk=articleupload.pk }">{{ articleupload.title }}</a></h1> -->
+           <!-- <p>{{ article.text|linebreaksbr }}</p> -->
+            </div>
+        </div>
+      </div>
+</a>
+    {% endfor %}
+</div>
+    {% else %}
+<p>No books matched your search criteria.</p>
+      {% endif %}
+
+    </div>
+<div class = "sepblock">
+</div>
+<div class = "articlecontent">
+<iframe src="https://www.google.com" name="myiframe" ></iframe>
+</div>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if articles.has_previous %}
+            <a class = "paginationlink" href="?page=1">&laquo; first</a>
+            <a class = "paginationlink" href="?page={{ articles.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+        </span>
+
+        {% if articles.has_next %}
+            <a class = "paginationlink" href="?page={{ articles.next_page_number }}">next</a>
+            <a class = "paginationlink" href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}
