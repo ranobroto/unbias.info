@@ -2,9 +2,11 @@
 
 {% block content %}
 <!--style = "background: url({{articles.imageurl}}); background-repeat: no-repeat; background-size: cover;  background-position: center; "-->
-<div class = "backgroundblur" style = "background: url({{articles.imageur}}) no-repeat center center fixed; background-size: cover;  background-position: center; "></div>
+<div class = "backgroundblur" style = "background: url({{articles.imageurl}}) no-repeat center center fixed; background-size: cover;  background-position: center; "></div>
 <div class = "flexarticle">
 <div class = "article">
+
+
 <img class="newsdetailimage" src="{{articles.imageurl}}">
     <div class="newsdetail">
         {% if articles.postdate %}
