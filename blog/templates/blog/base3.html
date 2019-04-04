@@ -1,0 +1,86 @@
+{% load static %}
+<html>
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Font+Name">
+
+    <head>
+        <title>Rushmore News</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    <body>
+    <div class="content container">
+        <div class="page-header">
+
+        </div>
+        <DIV class="menubar">
+            <div class ="menu_section1">
+            <img class="logo" src="/static/image/logo.png">
+             <a class ="page-header h1" href="/articleupload/">Rushmore News</a><br>
+                <br>
+
+             <!--    <form action="/search/" method="get">
+              <input type="text" name="q">
+             <input type="submit" value="Search">
+            </form> -->
+
+            <div class="form-style-5">
+<form action="/search/" method="get">
+<fieldset>
+<input type="text" name="q" placeholder="Article search">
+    </fieldset>
+<input type="submit" value="Search">
+</form>
+</div>
+        </DIV>
+
+            <div class="menu_section4">News Filters</div>
+
+            <a href="/articleupload/politics">
+            <div class="menu_section2">
+                Politics
+            </div>
+                </a>
+            <a href="/articleupload/worldnews">
+             <div class="menu_section2">
+                 World News
+            </div>
+                </a>
+            <a href="/articleupload/usnews">
+             <div class="menu_section2">
+                US News
+            </div>
+                </a>
+                     {% if user.is_authenticated %}
+                 <a href="{% url 'logout' %}">
+                     <div class="menu_section3">Logout</div>
+                 </a>
+                 {% else %}
+                 <a href="{% url 'login' %}">
+                     <div class="menu_section3">Login</div>
+                 </a>
+                  <a href="/accounts/signup">
+                      <div class="menu_section3">Sign Up</div>
+                  </a>
+                 {% endif %}
+            {% if user.is_authenticated %}
+            <!--<a href="{ url 'post_new' }" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
+            <!-- <a href="{ url 'post_draft_list' }" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a> -->
+            {% endif %}
+
+                </div>
+    </div>
+
+            <!--<div class="row">-->
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+           <!-- </div> -->
+        </div>
+    </body>
+</html>

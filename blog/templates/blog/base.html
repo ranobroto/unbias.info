@@ -13,14 +13,42 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     </head>
     <body>
+
+    <div id="contentmobile">Rushmore's mobile version is coming soon. Please use our desktop version for now.</div>
     <div class="content container">
         <div class="page-header">
+  <div class="form-style-5">
+
+<form action="/search/" method="get">
+<fieldset>
+<input type="text" name="q" placeholder="Article search">
+    </fieldset>
+
+</form>
+</div>
+            {% if user.is_authenticated %}
+
+                 <a href="{% url 'logout' %}">
+                     <div class="menu_section3">Logout</div>
+                 </a>
+                 {% else %}
+                 <a href="{% url 'login' %}">
+                     <div class="menu_section3">Login</div>
+                 </a>
+                  <a href="/accounts/signup">
+                      <div class="menu_section3">Sign Up</div>
+                  </a>
+                 {% endif %}
+            {% if user.is_authenticated %}
+            <!--<a href="{ url 'post_new' }" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
+            <!-- <a href="{ url 'post_draft_list' }" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a> -->
+            {% endif %}
 
         </div>
         <DIV class="menubar">
             <div class ="menu_section1">
             <img class="logo" src="/static/image/logo.png">
-             <a class ="page-header h1" href="/articleupload/">Rushmore News</a><br>
+             <a class ="hh1" href="/articleupload/">Rushmore News</a><br>
                 <br>
 
              <!--    <form action="/search/" method="get">
@@ -28,14 +56,7 @@
              <input type="submit" value="Search">
             </form> -->
 
-            <div class="form-style-5">
-<form action="/search/" method="get">
-<fieldset>
-<input type="text" name="q" placeholder="Article search">
-    </fieldset>
-<input type="submit" value="Search">
-</form>
-</div>
+
         </DIV>
 
             <div class="menu_section4">News Filters</div>
@@ -55,22 +76,7 @@
                 US News
             </div>
                 </a>
-                     {% if user.is_authenticated %}
-                 <a href="{% url 'logout' %}">
-                     <div class="menu_section3">Logout</div>
-                 </a>
-                 {% else %}
-                 <a href="{% url 'login' %}">
-                     <div class="menu_section3">Login</div>
-                 </a>
-                  <a href="/accounts/signup">
-                      <div class="menu_section3">Sign Up</div>
-                  </a>
-                 {% endif %}
-            {% if user.is_authenticated %}
-            <!--<a href="{ url 'post_new' }" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
-            <!-- <a href="{ url 'post_draft_list' }" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a> -->
-            {% endif %}
+
 
                 </div>
     </div>
