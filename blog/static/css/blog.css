@@ -7,11 +7,17 @@ h1 a, h2 a {
 .page-header {
     background-color: black;
     margin-top: 0;
-    position: sticky;
     top: 0;
     z-index: 100;
     border: none;
     margin: 0px 0 0 0;
+
+    display:block;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    left:10%;
+
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -80,6 +86,9 @@ display: inline-block;
 width: 90%;
 margin: 0 0 0 10%;
 padding: 0;
+
+top:50px;
+
 }
 
 .col-md-9 {
@@ -87,6 +96,9 @@ display: inline-block;
 width: 100%;
 margin: 0 0 0 0%;
 padding: 0;
+
+background-color: RGBA(255, 255, 255, 0.5);
+
 }
 
 .container {
@@ -98,6 +110,11 @@ background-color:white;
 }
 
 h1 {
+Font-size: 1.65vw;
+
+}
+
+.hh1{
 Font-size: 1.65vw;
 
 }
@@ -135,6 +152,7 @@ list-style-type: none;
     position: fixed;
     background-color: black;
     color:white;
+
 }
 
 .logo{
@@ -143,6 +161,7 @@ width: 90%;
 margin-right: auto;
 margin-left: auto;
 }
+
 
 
 .listmenu {
@@ -281,6 +300,8 @@ display block;
     filter: blur(0px) !important;
     -webkit-filter: blur(0px) !important;
     max-width:98%;
+
+    object-fit: cover;
 }
 
 .backgroundblur{
@@ -303,7 +324,8 @@ display block;
 
 
 .articlemenu {
-width: 100S%;
+width: 100%;
+
 position: relative;
 float: left;
 }
@@ -315,12 +337,21 @@ position: fixed;
 float: left;
 background: white;
 vertical-align: text-top;
+top:50px;
 }
 .articletotal {
 width: 33%;
 background: white;
 vertical-align: top;
 }
+.articletotal2 {
+width: 100%;
+background: black;
+vertical-align: top;
+color:white;
+margin: 0 0 -10px 0px;
+}
+
 
 .container{
 padding-left: 0;
@@ -346,7 +377,7 @@ margin-left:0px;
 
 .sepblock {
 height: 100%;
-width:.5%;
+width:.0%;
 left:39.5%;
 background-color:black;
 position: fixed;
@@ -398,13 +429,15 @@ margin-left:9.6%
 
 
 .form-style-5{
-	width: 100%;
+	width: 80%;
 	padding: 0;
 	##background: #f4f7f8;
-	margin: 0px auto;
 	padding: 0;
 	##background: #f4f7f8;
 	border-radius: 8px;
+	display:inline-block;
+	height:100%;
+
 }
 .form-style-5 fieldset{
 	border: none;
@@ -433,6 +466,10 @@ margin-left:9.6%
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 10px;
+
+	margin-top:10px;
+	height:30px;
+
 }
 .form-style-5 input[type="text"]:focus,
 .form-style-5 textarea:focus,
@@ -482,7 +519,9 @@ text-align: center;
  vertical-align: middle;
  flex-direction: column;
   justify-content: center;
-  font-size: 20px;
+
+  font-size: 1.1vw;
+
 
 }
 
@@ -492,13 +531,14 @@ color:white;
 }
 
 .menu_section3{
-display: block;
-margin-top:140%;
-width: 100%;
+
+display: inline-block;
+width:4%;
 text-align: center;
  vertical-align: middle;
 
-  font-size: 20px;
+  font-size: 1.1vw;
+
 }
 .menu_section3:hover{
 background-color: white;
@@ -513,8 +553,31 @@ text-align: center;
  vertical-align: middle;
  flex-direction: column;
   justify-content: center;
-  font-size: 20px;
+
+  font-size: 1.1vw;
 
   color: white;
   border-bottom: 1px solid white;
 }
+
+
+#contentmobile {display: none;}
+@media screen and (max-width: 768px) {
+
+iframe {
+display: none;
+}
+
+#contentmobile {
+display: block;
+ position: fixed;
+    height: 100%;
+    width: 100%;
+     z-index: 100;
+    background-color:black;
+    color:white;
+   padding: 100px;
+}
+
+}
+
