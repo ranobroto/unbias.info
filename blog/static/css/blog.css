@@ -11,13 +11,11 @@ h1 a, h2 a {
     z-index: 100;
     border: none;
     margin: 0px 0 0 0;
-
     display:block;
     position: fixed;
     height: 50px;
     width: 100%;
     left:10%;
-
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -86,9 +84,7 @@ display: inline-block;
 width: 90%;
 margin: 0 0 0 10%;
 padding: 0;
-
 top:50px;
-
 }
 
 .col-md-9 {
@@ -96,9 +92,7 @@ display: inline-block;
 width: 100%;
 margin: 0 0 0 0%;
 padding: 0;
-
 background-color: RGBA(255, 255, 255, 0.5);
-
 }
 
 .container {
@@ -152,7 +146,6 @@ list-style-type: none;
     position: fixed;
     background-color: black;
     color:white;
-
 }
 
 .logo{
@@ -161,7 +154,6 @@ width: 90%;
 margin-right: auto;
 margin-left: auto;
 }
-
 
 
 .listmenu {
@@ -300,7 +292,6 @@ display block;
     filter: blur(0px) !important;
     -webkit-filter: blur(0px) !important;
     max-width:98%;
-
     object-fit: cover;
 }
 
@@ -325,7 +316,6 @@ display block;
 
 .articlemenu {
 width: 100%;
-
 position: relative;
 float: left;
 }
@@ -364,12 +354,17 @@ margin-left:0px;
 
 .articlecontent iframe {
    border: 0;
-   height: 100%;
    left: 0;
    position: absolute;
    top: 0;
    width: 100%;
    border:none;
+}
+
+.iframe{
+     height: -webkit-calc(100% - 50px);
+    height:    -moz-calc(100% - 50px);
+     height: calc(100% - 50px);
 }
 .post:hover {
 
@@ -437,7 +432,6 @@ margin-left:9.6%
 	border-radius: 8px;
 	display:inline-block;
 	height:100%;
-
 }
 .form-style-5 fieldset{
 	border: none;
@@ -466,10 +460,8 @@ margin-left:9.6%
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 10px;
-
 	margin-top:10px;
 	height:30px;
-
 }
 .form-style-5 input[type="text"]:focus,
 .form-style-5 textarea:focus,
@@ -519,9 +511,7 @@ text-align: center;
  vertical-align: middle;
  flex-direction: column;
   justify-content: center;
-
   font-size: 1.1vw;
-
 
 }
 
@@ -531,14 +521,12 @@ color:white;
 }
 
 .menu_section3{
-
 display: inline-block;
 width:4%;
 text-align: center;
  vertical-align: middle;
 
   font-size: 1.1vw;
-
 }
 .menu_section3:hover{
 background-color: white;
@@ -553,7 +541,6 @@ text-align: center;
  vertical-align: middle;
  flex-direction: column;
   justify-content: center;
-
   font-size: 1.1vw;
 
   color: white;
@@ -580,4 +567,3 @@ display: block;
 }
 
 }
-
